@@ -12,18 +12,29 @@ void printNums() {
 }
 
 printNums();
-Car car = new Car("Opel", 15123123);
-Console.WriteLine(car.model);
+Car car = new("Opel", 15123123);
+car.GetModel();
+
 
 class Car
 {
-    public string model;
-    public int weight;
+    private readonly string model;
+    private readonly int weight;
 
     public Car(string model, int weight)
     {
         this.model = model;
         this.weight = weight;
     }
-}
 
+    public void GetModel() 
+    {
+        Console.WriteLine(model);
+    }
+
+    public int GetWeight()
+    {
+        return weight;
+    }
+
+}
